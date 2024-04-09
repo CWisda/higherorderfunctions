@@ -89,3 +89,34 @@ printPlayerStats(player2);
         }
  });
  console.log(filteredPlayers);
+
+
+
+ // Higher order functions just means its a functions that either 
+ // 1. Takes another function as a parameter or 
+ // 2. Returns a function 
+
+ function add(a, b) {
+    return a + b; 
+ }
+ const result = add(3, 4);
+
+ //This function returns another function
+ //function buildGreeting(greeting) {
+   // return `${greeting}, Hunter!`;
+ //}
+
+ //console.log(buildGreeting("Hello"));
+
+ function buildGreeting(greeting) {
+        return (name) => {
+            return `${greeting}, ${name}`;
+        }
+    }
+
+    const sayHello = buildGreeting("Hello");
+    console.log(sayHello("Dan"));
+    console.log(sayHello("Nawaf"));
+    const sayGoodbye = buildGreeting("Goodbye");
+    console.log(sayGoodbye("Doug"));
+    console.log(sayGoodbye("Charles"));
